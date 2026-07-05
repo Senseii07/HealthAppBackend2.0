@@ -16,7 +16,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-z7akzm(pjkn&xc)9g0f^1w-xa=
 
 DEBUG = os.getenv('DEBUG', 'True').lower() in ('true', '1', 't')
 
-ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',') if host.strip()]
+ALLOWED_HOSTS = ['https://healthappbackend-p49c.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -137,14 +137,18 @@ if cors_origins:
     CORS_ALLOWED_ORIGINS = [origin.strip() for origin in cors_origins.split(',') if origin.strip()]
 else:
     CORS_ALLOWED_ORIGINS = [
+        "https://aayushthapamagar.com.np",
+        "https://www.aayushthapamagar.com.np",
         'http://localhost:3000',
         'http://127.0.0.1:3000',
         'http://localhost:3001',
     ]
 
 # CSRF Trusted Origins (needed for django admin access over HTTPS in production)
-CSRF_TRUSTED_ORIGINS = [origin for origin in CORS_ALLOWED_ORIGINS]
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://aayushthapamagar.com.np",
+    "https://www.aayushthapamagar.com.np",
+]
 # REST Framework Configuration
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
