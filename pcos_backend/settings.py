@@ -16,7 +16,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-z7akzm(pjkn&xc)9g0f^1w-xa=
 
 DEBUG = os.getenv('DEBUG', 'True').lower() in ('true', '1', 't')
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = [
+    "healthappbackend-p49c.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 # Application definition
 
@@ -134,15 +138,17 @@ STORAGES = {
 # Load allowed origins from environment
 cors_origins = os.getenv('CORS_ALLOWED_ORIGINS')
 if cors_origins:
-    CORS_ALLOWED_ORIGINS = ["https://aayushthapamagar.com.np", "https://www.aayushthapamagar.com.np",]
+    CORS_ALLOWED_ORIGINS = ["https://aayushthapamagar.com.np",
+    "https://www.aayushthapamagar.com.np",]
 else:
     CORS_ALLOWED_ORIGINS = [
-        "https://aayushthapamagar.com.np",
-        "https://www.aayushthapamagar.com.np",
-        'http://localhost:3000',
-        'http://127.0.0.1:3000',
-        'http://localhost:3001',
-    ]
+    "https://aayushthapamagar.com.np",
+    "https://www.aayushthapamagar.com.np",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:3001",
+]
+CORS_ALLOW_ALL_ORIGINS = True
 
 # CSRF Trusted Origins (needed for django admin access over HTTPS in production)
 CSRF_TRUSTED_ORIGINS = [
