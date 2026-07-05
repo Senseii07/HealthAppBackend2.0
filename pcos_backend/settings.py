@@ -134,7 +134,7 @@ STORAGES = {
 # Load allowed origins from environment
 cors_origins = os.getenv('CORS_ALLOWED_ORIGINS')
 if cors_origins:
-    CORS_ALLOWED_ORIGINS = [origin.strip() for origin in cors_origins.split(',') if origin.strip()]
+    CORS_ALLOWED_ORIGINS = ["https://aayushthapamagar.com.np", "https://www.aayushthapamagar.com.np",]
 else:
     CORS_ALLOWED_ORIGINS = [
         "https://aayushthapamagar.com.np",
