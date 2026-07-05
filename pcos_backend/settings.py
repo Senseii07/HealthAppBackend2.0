@@ -148,7 +148,7 @@ else:
     "http://127.0.0.1:3000",
     "http://localhost:3001",
 ]
-CORS_ALLOW_ALL_ORIGINS = True
+#CORS_ALLOW_ALL_ORIGINS = True
 
 # CSRF Trusted Origins (needed for django admin access over HTTPS in production)
 CSRF_TRUSTED_ORIGINS = [
